@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    width: 70vw;
+}
+
+.panel{   
+    height: 90vh;
+    flex: 0.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 50px;
+    margin: 10px;
+    transition: flex 1.5s ease-in;
+}
+
+.panel h3{
+    position: absolute;
+    font-size: 3rem;
+    color: white;
+    bottom: 40px;
+    left: 30px;
+    opacity: 0;
+    transition: opacity 1s ease-in 1s;
+}
+
+
+.panel.active{
+    flex: 2;
+    
+}
+
+.panel.active h3{
+    opacity: 1;
+}
+
+button{
+    display: none;
+}
+
+
+@media screen and (max-width: 950px) {
+    .panel:nth-child(3),
+    .panel:nth-child(4),
+    .panel:nth-child(5),
+    .panel:nth-child(6){
+        display: none;
+    }
+
+    .panel{
+        transition:opacity 1s linear;
+    }
+
+    button{
+        display: block;
+    }
+    
+}
